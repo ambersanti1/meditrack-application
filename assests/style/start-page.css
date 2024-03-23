@@ -3,8 +3,8 @@ body {
     background-image: 
     /* top, transparent red */
     linear-gradient(
-      rgba(0, 138, 138, 0.8),
-      rgba(0, 138, 138, 0)
+      rgba(0, 138, 138, 1),
+      rgba(0, 138, 138, 0.2)
     ),
     /* your image */
     url('../img/pexels-cottonbro-studio-7579827.jpg');
@@ -37,7 +37,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  width: 70%;
+  width: 90%;
   background-color: white;
   color: darkcyan;
   padding: 0 2rem 0 2rem;
@@ -118,6 +118,8 @@ header li, a {
   align-items: flex-end;
 }
 
+/* MARKET */
+
 .intro-text {
   text-align: center;
   width:50%;
@@ -132,12 +134,14 @@ h3 {
 h4{
   font-size: 40px;
   font-weight: 500;
+  font-family: "Libre Baskerville", serif;
 }
 
 h5 {
   font-size: 15px;
   font-weight: 200;
   padding-bottom: 0.5rem;
+  
 }
 .libre-font {
   font-family: "Libre Baskerville", serif;
@@ -173,7 +177,6 @@ h5 {
   align-items: center;
   padding: 0 50px 0 50px;
 }
-
 
 .partners-container{
   background-color: var(--darkcyan);
@@ -235,4 +238,164 @@ footer  {
 .footer-col h2{
   text-align: center;
   font-size: 30px;
+}
+
+@media(max-width: 770px) {
+
+header {
+  width: 90%;
+  padding: 0 1rem 0 1rem;
+}
+
+header h2 {
+  font-size: 20px;
+}
+
+header li, a {
+  font-size: 13px;
+}
+
+.nav_links li a {
+  width: 100px;
+}
+
+.phrase-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--darkblue);
+  width: 100%;
+  margin: 80px auto 20px auto;
+  height: 700px;
+  line-height: 5rem;
+
+}
+
+.big {
+  font-size: 60px;
+}
+
+.row-phrase-schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.row-phrase-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.row-phrase-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+      .market-numbers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;;
+    align-items: center;
+    width: 50%;
+  }
+      .market-each-number {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 10px 0;
+  }
+
+      .market-each-number h4{
+      font-size: 40px;
+  }
+    .market-each-number p{
+      font-size: 20px;
+  }
+}
+
+@media(max-width: 570px) {
+
+  .phrase-container h2 {
+    text-align: left;
+    color: var(--white);
+    font-size: 25px;
+    font-weight: 300;
+  }
+
+  .big {
+  font-size: 50px;
+}
+      .icons-hospitals{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media(max-width: 1020px) {
+  .intro-text {
+  text-align: center;
+  width:80%;
+  font-weight: 200;
+  padding: 2rem 0 2rem 0;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  h4{
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  h5 {
+    font-size: 15px;
+    font-weight: 200;
+    padding-bottom: 0.5rem;
+  }
+  .libre-font {
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .low-font {
+    font-size: 10px;
+  }
+  .market-container{
+    height: auto;
+  }
+
+  .partners-container{
+    height: auto;
+  }
+
+  .icons-hospitals img {
+    padding: 10px 20px 10px 20px;
+    height: 100px;
+  }
+
+  footer  {
+    height: auto;
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .footer-cols {
+    font-size: 10px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-col {
+    width: 33%;
+    line-height: 1rem;
+  }
+  .footer-col h2{
+    font-size: 20px;
+  }
 }
