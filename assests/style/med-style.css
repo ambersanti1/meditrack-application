@@ -1,0 +1,573 @@
+/* START PAGE STYLE */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color:azure;
+  font-family: 'Nunito Sans', sans-serif;
+  height: 100vh;
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: darkcyan;
+}
+
+li, a {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  color: #ffff;
+  text-decoration: none;
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0 40px 0 20px;
+
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  font-weight: bold;
+}
+
+
+h1 {
+  font-size: 24pt;
+  color: white;
+  padding-left: 20px;
+}
+
+h3 {
+  font-size: 24pt;
+  font-weight: 900;
+}
+
+/* LEFT CONTAINER TEXT */
+.medication-title-section {
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.med-big-text {
+  width: 30%;
+  padding-left: 4rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.med-big-text h4 {
+  margin: 0;
+  font-size: 50pt;
+  font-weight: 900;
+  margin: 10px 0 10px 0;
+}
+.med-big-text #current-date {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20pt;
+  opacity: 0.3;
+  margin: 10px 0 10px 0;
+}
+.med-big-text h3 {
+  font-size: 40pt;
+  font-weight: 800;
+  margin: 10px 0 10px 0;
+}
+
+/* BUTTON STYLE */
+.button__text{
+  text-decoration: none;
+  color: white;
+}
+button{
+  width: 270px;
+  margin: 10px 0 10px 0;
+  display: flex;
+  height: 50px;
+  padding: 0;
+  background: darkcyan;
+  color: white;
+  border:none;
+  outline: none;
+  border-radius: 5px;
+  overflow:hidden;
+  font-family: 'nunito sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor:pointer;
+}
+#submit.button{
+  width: 190px;
+  
+}
+
+.button:hover{
+  opacity: 0.6;
+}
+
+.button__text{
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height:100%
+}
+
+.button__icon{
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height:100%;
+}
+
+.button__icon{
+  font-size: 1.5em;
+  background: rgba(0,0,0,0.08);
+}
+
+.submit-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* RIGHT CONTAINER FORM AND CARD */
+.med-form-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 70%;
+}
+
+/* FORM */
+.container{
+  width: 400px;
+  background-color: #fff;
+  padding: 2rem 0 2rem 0;
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title of the form */
+.container .title{
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* Line below the title */
+.container .title::before{ 
+  content:" ";
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 20%;
+  background: darkcyan;
+  position: absolute;
+}
+
+form {
+  width: 80%;
+}
+form .input-box{
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+form .input-box p{
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: gray;
+  padding-left: 0.5rem;
+  font-style: italic;
+}
+label {
+  display: block;
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+form .input-box input,
+form .input-box select{
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 15px;
+  border-bottom-width: 2px;
+  font-family: 'Nunito Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+form .input-box input:focus,
+form .input-box input:valid,
+form .input-box select:focus,
+form .input-box select:valid{
+  border-color: darkgray;
+}
+
+input[type = "date"],
+input[type = "time"],
+input::placeholder {
+  font-family: 'Nunito Sans', sans-serif;
+  color: darkslategray;
+  text-transform:initial;
+}
+
+.input-box input[name = "days"],
+.input-box input[name = "frequency"] {
+  width: 20%;
+}
+
+.hide{
+  display: none;
+}
+.input-box input{
+  font-size: 20px;
+}
+/* 
+/* CARDS STYLE */
+
+.card-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
+.sub-card-container{
+  width: 100%;
+} 
+
+.medication-card{
+  width: 550px;
+  margin-bottom: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
+  display: flex;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate (-50%,-50%);
+}
+
+.appointment-card{
+  width: 600px;
+  margin: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
+  display: flex;
+  overflow: hidden;
+
+  transform: translate (-50%,-50%);
+}
+
+.medication-card .date-take{
+  opacity: 1;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+.next-take{
+  opacity: 0.7;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.medication-card .hour-take{
+  letter-spacing: 1px;
+  margin: 10px 0;
+  font-size: 40px;
+}
+
+.time-section{
+  background: darkcyan;
+  color: #fff;
+  padding: 30px;
+  width: 40%;
+  position: relative;
+
+}
+
+.time-section h6{
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.info-section{
+  padding: 10px;
+  position: relative;
+  width: 60%;
+}
+
+.info-section h2{
+  padding-left: 0;
+  margin-top: 60px;
+}
+
+.time-info-app {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.time-section-app{
+  background: darkcyan;
+  height: 40%;
+  padding: 1rem;
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.time-section-app h6{
+  font-size: 25px;
+  font-weight: 300;
+}
+.info-section-app{
+  height: 60%;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-section-app h2{
+  padding-left: 0;
+  text-transform: uppercase;
+  /* margin-top: 60px; */
+}
+
+.info-section-app h3{
+  padding-left: 0;
+  text-transform: capitalize;
+  font-weight: 300;
+  /* margin-top: 60px; */
+}
+.info-section-app p{
+  text-transform: capitalize;
+  font-size: small;
+}
+
+
+#map {
+  width: 50%;
+}
+
+.progress-wrapper{
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  text-align: right;
+  width: 150px;
+}
+
+.progress-wrapper h2{
+  padding-left:0;
+}
+
+.progressBar{
+  background: #ddd;
+  border-radius: 3px;
+  height: 5px;
+  width: 100%;
+}
+
+.progressBar{
+  border-radius: 3px;
+  background: darkcyan;
+  position:absolute;
+  top:0;
+  left:0;
+  height:5px;
+  width: 5%;
+}
+
+.progress-text{
+  font-size: 15px;
+  opacity: 0.6;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+.info-section p{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.doneBtn {
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 2.5rem;
+  padding: 1rem;
+  background: darkcyan;
+  color: white;
+  border:none;
+  font-family: 'nunito sans', sans-serif;
+  outline: none;
+  border-radius: 5px;
+  overflow:hidden;
+  font-size: 20px;
+  font-weight: 500;
+  cursor:pointer;
+}
+
+.card-pop {
+  transform: scale(1);
+  transition: transform 0.5s ease-out;
+}
+
+.card-pop:active {
+  transform: scale(1.1);
+}
+
+@media(max-width: 768px) {
+  .medication-card {
+    flex-direction: column;
+    width: 90%
+  }
+  .time-section{
+    width: 100%;
+  }
+  .time-section h2 {
+    margin: 10px 0 0;
+  }
+  .time-section a {
+    margin-top: 10px;
+  }
+  .info-section h2{
+    margin-top: 20px;
+  }
+  .info-section p{
+    margin-bottom: 50px;
+  }
+}
+
+@media(max-width: 1350px) {
+  .med-big-text {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .medication-title-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+  .med-form-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+  .grid-layout {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* NAVBAR MENU */
+li, a {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  color: #ffff;
+  text-decoration: none;
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0 40px 0 20px;
+
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  font-weight: bold;
+}
+
+/* AUTOCOMPLETE SECTION */
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
