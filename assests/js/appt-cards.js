@@ -51,7 +51,6 @@ function initMap(address) {
   });
 }
 
-
 function addCard(event) {
   const doctorNameValue = doctorNameEl.value;
   const specialityValue = specialityEl.value;
