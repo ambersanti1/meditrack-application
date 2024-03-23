@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  background-color:azure;
+  background-color:white;
   font-family: 'Nunito Sans', sans-serif;
   height: 100vh;
 }
@@ -73,11 +73,11 @@ h3 {
 
 .med-big-text {
   width: 30%;
-  padding-left: 4rem;
+  padding: 80px 0 0 80px;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .med-big-text h4 {
   margin: 0;
@@ -160,8 +160,8 @@ button{
 .med-form-card {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   width: 70%;
+  margin-left: 100px;
 }
 
 /* FORM */
@@ -260,11 +260,11 @@ input::placeholder {
 /* CARDS STYLE */
 
 .card-container{
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 90%;
 } 
 .sub-card-container{
   width: 100%;
@@ -285,13 +285,12 @@ input::placeholder {
 
 .appointment-card{
   width: 600px;
-  margin: 10px;
+  margin: 1rem;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
   display: flex;
   overflow: hidden;
-
   transform: translate (-50%,-50%);
 }
 
@@ -342,7 +341,7 @@ input::placeholder {
 }
 
 .time-info-app {
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-direction: column;
 }
@@ -384,12 +383,12 @@ input::placeholder {
 }
 .info-section-app p{
   text-transform: capitalize;
-  font-size: small;
+  font-size: 15px;
 }
 
 
-#map {
-  width: 50%;
+.map {
+  width: 40%;
 }
 
 .progress-wrapper{
@@ -461,19 +460,71 @@ input::placeholder {
   transform: scale(1.1);
 }
 
+
+@media(max-width: 550px){
+
+  header h1 {
+    font-size: 25px;
+  }
+  li, a {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: #ffff;
+  text-decoration: none;
+  list-style: none;
+}
+
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+  width: 100px;
+}
+
+.nav_links li a:hover {
+  font-weight: bold;
+}
+
+}
 @media(max-width: 770px) {
+  
+.nav_links li {
+  display: inline-block;
+  padding: 0 20px 0 10px;
+  
+}
+
+.appointment-card {
+  width: 400px;
+}
+
+
   .medication-card {
-    flex-direction: column;
-    width: 90%
+    margin: 20px 20px 20px 20px;
+    width: 400px;
   }
   .time-section{
-    width: 100%;
+    width: 40%;
   }
   .time-section h2 {
     margin: 10px 0 0;
   }
+  .medication-card .hour-take{
+  letter-spacing: 1px;
+  margin: 10px 0;
+  font-size: 30px;
+}
+.medication-card .date-take{
+  opacity: 1;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
   .time-section a {
     margin-top: 10px;
+  }
+  .info-section {
+    width: 60%;
   }
   .info-section h2{
     margin-top: 20px;
@@ -484,9 +535,10 @@ input::placeholder {
 
 }
 
-@media(max-width: 1350px) {
+@media(max-width: 1000px) {
   .med-big-text {
-    padding: 0;
+    padding: 3rem 0 1rem 0;
+    height: auto;
     width: 100%;
     text-align: center;
     display: flex;
@@ -505,34 +557,12 @@ input::placeholder {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin: 0;
 }
   .grid-layout {
     display: flex;
     flex-direction: column;
   }
-}
-
-/* NAVBAR MENU */
-li, a {
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 16px;
-  color: #ffff;
-  text-decoration: none;
-  list-style: none;
-}
-
-.nav_links li {
-  display: inline-block;
-  padding: 0 40px 0 20px;
-
-}
-
-.nav_links li a {
-  transition: all 0.3s ease 0s;
-}
-
-.nav_links li a:hover {
-  font-weight: bold;
 }
 
 /* AUTOCOMPLETE SECTION */
