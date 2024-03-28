@@ -117,6 +117,7 @@ function addCard(event) {
               <h3 class="speciality">${specialityValue}</h3>
               <h2 class ="doctor-name">Dr. ${doctorNameValue}</h2>
               <p class="location" id="locationValue">${locationValue}</p>
+              <button class="doneBtn">Done</button>
             </div>
           </div>
           <div class = "map" id="map-${mapCount}"></div>
@@ -125,7 +126,11 @@ function addCard(event) {
 
         // Initialize the map for the added location
         initMap(locationValue, mapCount);
-
+        
+        const doneBtnApp = document.querySelector('.doneBtn')
+        doneBtnApp.addEventListener("click", function () {
+          appointmentCard.remove()
+        })
         // Reset the form
         var formulario = document.getElementById("formulario");
         formulario.reset();

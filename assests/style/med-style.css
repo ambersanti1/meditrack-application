@@ -277,6 +277,7 @@ input::placeholder {
   width: 100%;
 } 
 
+/* MEDICATION CARD */
 .medication-card{
   width: 550px;
   margin-bottom: 1rem;
@@ -290,6 +291,59 @@ input::placeholder {
   transform: translate (-50%,-50%);
 }
 
+.time-section{
+  background: var(--darkcyan);
+  color: #fff;
+  padding: 30px;
+  width: 40%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.time-section .next-take{
+  opacity: 0.7;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+.time-section .date-take{
+  opacity: 1;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.time-section .hour-take{
+  letter-spacing: 1px;
+  margin: 10px 0;
+  font-size: 35px;
+}
+
+.time-section .medicine-name {
+  font-size: 25px;
+}
+
+.info-section{
+  padding: 10px;
+  position: relative;
+  width: 60%;
+}
+
+.info-section .medicine-name{
+  padding-left: 0;
+  margin-top: 60px;
+  text-transform: uppercase;
+}
+.info-section .discomfort{
+  text-transform: uppercase;
+}
+
+/* APPOINTMENT CARD */
+
 .appointment-card{
   width: 600px;
   margin: 1rem;
@@ -301,57 +355,12 @@ input::placeholder {
   transform: translate (-50%,-50%);
 }
 
-.medication-card .date-take{
-  opacity: 1;
-  text-transform: uppercase;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 30px;
-}
-.next-take{
-  opacity: 0.7;
-  text-transform: uppercase;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 20px;
-}
-
-.medication-card .hour-take{
-  letter-spacing: 1px;
-  margin: 10px 0;
-  font-size: 40px;
-}
-
-.time-section{
-  background: var(--darkcyan);
-  color: #fff;
-  padding: 30px;
-  width: 40%;
-  position: relative;
-
-}
-
-.time-section h6{
-  font-size: 20px;
-  font-weight: 300;
-}
-
-.info-section{
-  padding: 10px;
-  position: relative;
-  width: 60%;
-}
-
-.info-section h2{
-  padding-left: 0;
-  margin-top: 60px;
-}
-
 .time-info-app {
   width: 60%;
   display: flex;
   flex-direction: column;
 }
+
 .time-section-app{
   background: var(--darkcyan);
   height: 40%;
@@ -363,10 +372,18 @@ input::placeholder {
   justify-content: space-evenly;
 }
 
+.time-section-app .next-take{
+  opacity: 0.7;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
 .time-section-app .date-take{
   font-size: 25px;
   font-weight: 300;
 }
+
 .info-section-app{
   height: 60%;
   padding: 1rem;
@@ -391,7 +408,6 @@ input::placeholder {
   text-transform: capitalize;
   font-size: 15px;
 }
-
 
 .map {
   width: 40%;
@@ -432,18 +448,15 @@ input::placeholder {
   letter-spacing: 1px;
   margin-top: 5px;
 }
-.info-section p{
-  font-size: 20px;
-  font-weight: bold;
-}
+
 
 .doneBtn {
   float: right;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
-  height: 2.5rem;
+  width: 3.5rem;
+  height: 2rem;
   padding: 1rem;
   background: var(--darkcyan);
   color: white;
@@ -455,6 +468,7 @@ input::placeholder {
   font-size: 20px;
   font-weight: 500;
   cursor:pointer;
+  font-size: 15px;
 }
 
 .card-pop {
@@ -466,7 +480,11 @@ input::placeholder {
   transform: scale(1.1);
 }
 
-
+.cardi {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
 @media(max-width: 550px){
 
   header h1 {
@@ -517,7 +535,7 @@ input::placeholder {
   }
 /* APPOINTMENT CARD */
   .appointment-card {
-    width: 380px;
+    width: 370px;
   }
 
   .time-section-app .next-take{
@@ -552,8 +570,8 @@ input::placeholder {
 /* MEDICATION CARD */
   .medication-card {
     margin: 20px 20px 20px 20px;
-    width: 380px;
-    height: 170px;
+    width: 370px;
+    height: auto;
   }
   .time-section{
     width: 40%;
@@ -582,21 +600,28 @@ input::placeholder {
   .info-section {
     width: 60%;
   }
-  .info-section h2{
+  .info-section .medicine-name{
     margin-top: 60px;
-    font-size: 20px;
+    font-size: 18px;
   }
-  .info-section p{
+  .info-section .discomfort{
     margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 12px;
+  }
+
+  .progress-text{
+    font-size: 10px;
+    opacity: 0.6;
+    letter-spacing: 1px;
+    margin-top: 5px;
   }
   .doneBtn {
     float: right;
     width: 3rem;
     height: 1.5rem;
     padding: 5px;
-    margin: 0 0 5px 0;
-    font-size: 15px;
+    margin: 5px 0 5px 0;
+    font-size: 10px;
   }
 
 }
@@ -651,6 +676,7 @@ input::placeholder {
 }
 
 .autocomplete-items div {
+  font-size: 10px;
   padding: 10px;
   cursor: pointer;
   background-color: #fff;
