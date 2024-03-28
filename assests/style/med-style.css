@@ -16,6 +16,13 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   height: 100vh;
 }
+:root {
+  --white: rgb(255, 253, 253);
+  --darkcyan: rgb(12, 168, 168) ; 
+  --darkblue: #00468b; 
+  --darkgreen: #008b46;
+  --darkgray: rgb(58, 54, 54);
+}
 
 /* HEADER */
 
@@ -24,7 +31,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  background-color: darkcyan;
+  background-color: var(--darkcyan);
 }
 
 li, a {
@@ -109,7 +116,7 @@ button{
   display: flex;
   height: 50px;
   padding: 0;
-  background: darkcyan;
+  background: var(--darkcyan);
   color: white;
   border:none;
   outline: none;
@@ -191,7 +198,7 @@ button{
   bottom: 0;
   height: 3px;
   width: 20%;
-  background: darkcyan;
+  background: var(--darkcyan);
   position: absolute;
 }
 
@@ -316,7 +323,7 @@ input::placeholder {
 }
 
 .time-section{
-  background: darkcyan;
+  background: var(--darkcyan);
   color: #fff;
   padding: 30px;
   width: 40%;
@@ -346,7 +353,7 @@ input::placeholder {
   flex-direction: column;
 }
 .time-section-app{
-  background: darkcyan;
+  background: var(--darkcyan);
   height: 40%;
   padding: 1rem;
   color: #fff;
@@ -411,7 +418,7 @@ input::placeholder {
 
 .progressBar{
   border-radius: 3px;
-  background: darkcyan;
+  background: var(--darkcyan);
   position:absolute;
   top:0;
   left:0;
@@ -438,7 +445,7 @@ input::placeholder {
   width: 4rem;
   height: 2.5rem;
   padding: 1rem;
-  background: darkcyan;
+  background: var(--darkcyan);
   color: white;
   border:none;
   font-family: 'nunito sans', sans-serif;
