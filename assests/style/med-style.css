@@ -533,6 +533,57 @@ input::placeholder {
     align-items: center;
     width: 390px;
   }
+
+/* FORM */
+  .container{
+  width: 380px;
+  background-color: #fff;
+  padding: 1rem 0 1rem 0;
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title of the form */
+.container .title{
+  font-size: 20px; 
+
+}
+
+form {
+  width: 70%;
+}
+
+form .input-box p{
+  font-size: 12px;
+}
+label {
+  font-size: 12px;
+}
+
+form .input-box input,
+form .input-box select{
+  height: 30px;
+  font-size: 12px;
+}
+
+form .input-box input:focus,
+form .input-box input:valid,
+form .input-box select:focus,
+form .input-box select:valid{
+  border-color: darkgray;
+}
+
+/* BUTTON */
+button{
+  width: 180px;
+  height: 40px;
+  font-size: 12px;
+}
+
+
 /* APPOINTMENT CARD */
   .appointment-card {
     width: 370px;
