@@ -3,7 +3,7 @@ body {
     background-image: 
     /* top, transparent red */
     linear-gradient(
-      rgba(0, 138, 138, 1),
+      rgba(0, 138, 138, 0.8),
       rgba(0, 138, 138, 0.2)
     ),
     /* your image */
@@ -245,6 +245,7 @@ footer  {
 header {
   width: 90%;
   padding: 0 1rem 0 1rem;
+  height: 60px;
 }
 
 header h2 {
@@ -265,10 +266,9 @@ header li, a {
   justify-content: center;
   color: var(--darkblue);
   width: 100%;
-  margin: 80px auto 20px auto;
+  margin: 0 auto 20px auto;
   height: 700px;
   line-height: 5rem;
-
 }
 
 .big {
@@ -291,14 +291,14 @@ header li, a {
   align-items: center;
 }
 
-      .market-numbers {
+  .market-numbers {
     display: flex;
     flex-direction: column;
     justify-content: center;;
     align-items: center;
     width: 50%;
   }
-      .market-each-number {
+  .market-each-number {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -306,12 +306,23 @@ header li, a {
     padding: 10px 0 10px 0;
   }
 
-      .market-each-number h4{
-      font-size: 40px;
+  .market-container p,
+  .partners-container p{
+    font-size: 15px;
   }
-    .market-each-number p{
-      font-size: 20px;
+  .market-container h3,
+  .partners-container h3{
+    font-size: 20px;
   }
+  .market-container h4 {
+    font-size: 25px;
+  }
+
+  .icons-hospitals img {
+  padding: 10px 0 10px 0;
+  width: auto;
+  height: 80px;
+}
 }
 
 @media(max-width: 570px) {
@@ -326,7 +337,7 @@ header li, a {
   .big {
   font-size: 50px;
 }
-      .icons-hospitals{
+  .icons-hospitals{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -340,7 +351,7 @@ header li, a {
   text-align: center;
   width:80%;
   font-weight: 200;
-  padding: 2rem 0 2rem 0;
+  padding: 1rem 0 1rem 0;
   }
 
   h3 {
@@ -372,11 +383,6 @@ header li, a {
 
   .partners-container{
     height: auto;
-  }
-
-  .icons-hospitals img {
-    padding: 10px 20px 10px 20px;
-    height: 100px;
   }
 
   footer  {
