@@ -109,14 +109,14 @@ function addCard(event) {
           <div class="time-info-app">
             <div class="time-section-app">
               <h5 class="next-take">Next appointment</h5>
-              <h6>${fechaFormateada}</h6>
-              <h2>${hourValue}</h2>
+              <h6 class="date-take">${fechaFormateada}</h6>
+              <h2 class="hour-take">${hourValue}</h2>
             </div>
             <div class="info-section-app">
-              <h6>Appointment details</h6>
-              <h2>${specialityValue}</h2>
-              <h3>Dr. ${doctorNameValue}</h3>
-              <p id="locationValue">${locationValue}</p>
+              <h6 class="appt-details">Appointment details</h6>
+              <h3 class="speciality">${specialityValue}</h3>
+              <h2 class ="doctor-name">Dr. ${doctorNameValue}</h2>
+              <p class="location" id="locationValue">${locationValue}</p>
             </div>
           </div>
           <div class = "map" id="map-${mapCount}"></div>
