@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-session-sequelize": "^7.1.7",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mysql2": "^3.9.3",
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7",
+    "sequelize": "^6.37.2"
+  },
+  "name": "meditrack-application-server",
+  "description": "Website to help users track their medical treatment.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "seed": "node seeds/seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

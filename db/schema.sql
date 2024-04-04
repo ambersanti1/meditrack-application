@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS meditrack_db;
+CREATE DATABASE meditrack_db;

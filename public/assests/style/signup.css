@@ -1,0 +1,145 @@
+
+* {
+  font-family: 'Nunito Sans',sans-serif;
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: rgb(255, 253, 253);
+  --darkcyan: rgb(12, 168, 168) ; 
+  --darkblue: #0559ad; 
+  --darkgreen: #008b46;
+  --darkgray: rgb(58, 54, 54);
+}
+
+.sign-up-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.358);
+}
+
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0, 0.1); 
+  background-color: white; 
+}
+
+.sign-up-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333; 
+  font-size: 18px;
+}
+
+.sign-up-form input {
+  width: 100%;
+  padding: 8px;
+  font-size: 18px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0; 
+  border-radius: 4px;
+  outline: none; 
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1); 
+  transition: ease all  0.6s; 
+  color: rgb(10, 65, 138);
+}
+
+input:focus{
+  color: black;
+}
+
+input:hover, input:focus {
+  border-color: var(--darkcyan); 
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--darkcyan); 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: var(--darkblue); 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+}
+
+.sign-up-form h2{
+  font-size: 40px;
+  color: var(--darkcyan);
+  margin: 1rem;
+}
+
+.sign-up-form p {
+  display: block;
+  color: #333; 
+  font-size: 18px;
+}
+
+.forgot a, .user a {
+  color: #3498db; 
+  text-decoration: none; 
+  font-size: 18px;
+}
+
+.forgot a:hover, .user a:hover {
+  color: #2980b9; 
+  text-decoration: underline; 
+}
+
+.after-button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  transition: ease all 0.6s;
+}
+
+.dont {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 10px;
+  color: var(--darkcyan);
+  font-weight: 700;
+}
+@media(max-width: 770px) {
+  .sign-up-form {
+    margin: 1rem;
+  }
+  .sign-up-form h2{
+    font-size: 25px;
+    margin: 15px;
+  }
+  .sign-up-form p,
+  .sign-up-form label,
+  .sign-up-form input, 
+  .sign-up-form button, 
+  .sign-up-form a {
+    font-size: 15px;
+  }
+  
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assests/style/signup.css">
+      <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabarito&family=Manjari&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&family=Young+Serif&display=swap"
+      rel="stylesheet">
+  <title>Sign up</title>
+</head>
+<body>
+    <div class="content-container"></div>
+      <div class="sign-up-container">
+        <form class="sign-up-form signup-form">
+          <h2>Sign Up</h2>
+          <label htmlFor="username">Username:</label>
+          <input
+            id = "name-signup"
+            required
+            type="text"
+            placeholder="Username"
+          />
+
+          <label htmlFor="email">Email:</label>
+          <input
+            id = "email-signup"
+            required
+            type="email"
+            autoComplete="off"
+            placeholder="Email"
+          />
+
+          <label htmlFor="password">Password:</label>
+          <input
+            id = "password-signup"
+            required
+            type="password"
+            placeholder="****"
+          />
+
+          <button type="submit">Sign Up</button>
+
+          <div class="dont">
+            <p> Already have an account? </p>
+            <a href="/login">Login</a>
+          </div>
+
+        </form>
+      </div>
+      <script src="../assests/js/signup.js"></script>
+    </body>
+</html>

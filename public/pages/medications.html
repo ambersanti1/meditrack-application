@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="assests/style/med-style.css">
+  
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabarito&family=Manjari&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&family=Young+Serif&display=swap"
+      rel="stylesheet">
+
+    <!-- FONTAWESOME -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+
+    <title>Medications</title>
+
+  </head>
+
+  <body>
+    <header>
+      <h1>meditrack</h1>
+      <nav>
+        <ul class = nav_links>
+          <li><a href="/appointments">Appointments</a></li>
+          <li><a id="logout">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+      <main class="medication-title-section">
+        <div class="container-text">
+        <div class="med-big-text">
+        <h2>MEDICATIONS</h2>
+        <h4>Hello!</h4>
+        <h3 id="current-date"></h3>
+        <button type = "button" class = "button" id = "add-btn">
+          <span class="button__text">Add medication</span>
+          <span class="button__icon">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </span>
+        </button>
+        </div>
+        </div>
+
+      <!-- MEDICATION FORM & TREATMENT CARD -->
+      <div class="med-form-card">
+      <div id="medication-form" class = "hide">
+        <div class="container">
+          <form id = "formulario" autocomplete="off">
+            <div class="title">New medication</div>
+
+              <div class="autocomplete input-box">
+                <label>Medicine name</label>
+                <input type="text" placeholder="Type in medicine name" id="myInput" class="medicine-name" required>
+              </div>
+
+              <div class="input-box">
+                <label>Uneasiness</label>
+                <input type="text" placeholder="Type in disease" id="disease" required>
+              </div>
+
+              <div class="input-box">
+                <label>Treatment start hour</label>
+                <select id="start-hour">
+                  <option value="00:00">00:00</option>
+                  <option value="01:00">01:00</option>
+                  <option value="02:00">02:00</option>
+                  <option value="03:00">03:00</option>
+                  <option value="04:00">04:00</option>
+                  <option value="05:00">05:00</option>
+                  <option value="06:00">06:00</option>
+                  <option value="07:00">07:00</option>
+                  <option value="08:00">08:00</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                  <option value="18:00">18:00</option>
+                  <option value="19:00">19:00</option>
+                  <option value="20:00">20:00</option>
+                  <option value="21:00">21:00</option>
+                  <option value="22:00">22:00</option>
+                  <option value="23:00">23:00</option>
+                </select>
+              </div>
+
+              <div class="input-box">
+                <label>Treatment start date</label>
+                <input type="date" id= "start-date" value="YYYY-MM-DD" required>
+              </div>
+
+              <div class="input-box">
+                <label>Time frequency</label>
+                <p>Medicine is taken every <input name = "frequency"type="number" id="frequency" min = "1" required> hours</p>
+              </div>
+
+              <div class="input-box">
+                <label>Treatment duration</label>
+                <p>Treatment lasts <input name = "days" type="number" id="duration" min = "1" required> days</p>
+              </div>
+              <div class="submit-btn-container">
+                <button id = "submit">
+                  <span class="button__text">Submit</span>
+                  <span class="button__icon">
+                    <ion-icon name="add-outline"></ion-icon>
+                  </span>
+                </button>
+              </div>
+          </form>
+        </div>
+      </div>
+      
+<!-- TREATMENT CARDS -->
+      <div class="card-container"></div>
+    </div>
+    </div>
+  </main>
+
+<!-- SCRIPT LINKS -->
+
+    <!-- ICON -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- CURRENT DAY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src = "../assests/js/med-cards.js"></script>
+    <script src = "../assests/js/med-api.js"></script>
+    <script src = "../assests/js/logout.js"></script>
+    
+  </body>
+</html>

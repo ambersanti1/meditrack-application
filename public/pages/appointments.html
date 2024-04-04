@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="assests/style/med-style.css" />
+
+    <!------------- GOOGLE FONTS ----------- -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabarito&family=Manjari&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- GOOGLE MAPS -->
+
+    <script
+      async
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbSW5n0o3QJ18JpF6msq8x_R47hxT0rVc&libraries=places"
+    ></script>
+
+    <title>Appointments</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>meditrack</h1>
+      <nav>
+        <ul class="nav_links">
+          <li><a href="/medications">Medications</a></li>
+          <li><a id="logout">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- TITLE -->
+
+    <main class="medication-title-section">
+      <div class="container-text">
+      <div class="med-big-text">
+        <h2>APPOINTMENTS</h2>
+        <h4>Hello!</h4>
+        <h3 id="current-date"></h3>
+        <button type="button" class="button" id="add-btn">
+          <span class="button__text">Add appointment</span>
+          <span class="button__icon">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </span>
+        </button>
+      </div>
+      </div>
+
+      <!-- APPOINTMENT FORM -->
+      <div class="med-form-card">
+        <div id="medication-form" class="hide">
+          <div class="container">
+            <form id="formulario" autocomplete="off">
+              <div class="title">New appointment</div>
+
+              <div class="input-box">
+                <label>Doctor name</label>
+                <input
+                  type="text"
+                  placeholder="Type in doctor name"
+                  id="doctor-name"
+                  required
+                />
+              </div>
+
+              <div class="input-box">
+                <label>Speciality</label>
+                <input
+                  type="text"
+                  placeholder="Type in disease"
+                  id="speciality"
+                  required
+                />
+              </div>
+
+              <div class="input-box">
+                <label>Day</label>
+                <input type="date" id="day" required />
+              </div>
+
+              <div class="input-box">
+                <label>Hour</label>
+                <select id="hour" required>
+                  <option value="06:00">06:00</option>
+                  <option value="07:00">07:00</option>
+                  <option value="08:00">08:00</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                  <option value="18:00">18:00</option>
+                  <option value="19:00">19:00</option>
+                  <option value="20:00">20:00</option>
+                </select>
+              </div>
+
+              <div class="input-box">
+                <label>Location</label>
+                <input
+                  type="text"
+                  placeholder="Enter location"
+                  name="search_input"
+                  id="search_input"
+                  min="1"
+                  required
+                />
+              </div>
+              <div class="submit-btn-container">
+                <button id="submit">
+                  <span class="button__text">Submit</span>
+                  <span class="button__icon">
+                    <ion-icon name="add-outline"></ion-icon>
+                  </span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card-container"></div>
+      </div>
+    </main>
+
+    <!-- CURRENT DAY SCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../assests/js/appt-cards.js"></script>
+    <script src="../assests/js/logout.js"></script>
+
+    <!-- ICON SCRIPT -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- GOOGLE MAPS -->
+
+    <script>
+      // Alternatively, you can target your input element by ID
+      // Replace querySelector('input[name="search_input"]') with getElementById('search_input')
+      // and insert id="search_input" in your form's input field
+      var searchInput = document.querySelector('input[name="search_input"]');
+      document.addEventListener("DOMContentLoaded", function () {
+        const center = { lat: 20.689174, lng: -103.413131 };
+        // Create a bounding box with sides ~10km away from the center point
+        const defaultBounds = {
+          north: center.lat + 0.1,
+          south: center.lat - 0.1,
+          east: center.lng + 0.1,
+          west: center.lng - 0.1,
+        };
+        var autocomplete = new google.maps.places.Autocomplete(searchInput, {
+          bounds: defaultBounds,
+          fields: ["address_components", "geometry", "icon", "name"],
+          strictBounds: false,
+          types: ["hospital", "pharmacy", "bakery", "country"],
+        });
+        autocomplete.addListener("place_changed", function () {
+          var near_place = autocomplete.getPlace();
+        });
+      });
+    </script>
+  </body>
+</html>
