@@ -14,7 +14,6 @@ const signupFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace("/login");
-      console.log('signup');
     } else {
       alert(response.statusText);
     }

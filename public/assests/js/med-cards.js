@@ -30,7 +30,6 @@ function calculateDate(startHour, startDate, frequency, duration) {
   iterations = horasDias / frequency;
   partIteration = 100 / iterations;
   suma = 0;
-  console.log(partIteration);
 
   // Push the initial object with start date and start hour
   fechasArray.push({
@@ -76,8 +75,6 @@ function displayCards(medicineName, id) {
 
       localStorage.setItem(`${medicineName}_currentCardIndex`, lastCardIndex);
 
-      console.log(cards.length);
-      console.log(lastCardIndex)
       if (lastCardIndex === cards.length -1) {
         await deleteProjectById(id);
         cards[lastCardIndex].remove()
@@ -136,7 +133,6 @@ async function fetchMedications() {
       throw new Error("Failed to fetch medication");
     }
     const medications = await response.json();
-    console.log(medications);
     return medications;
   } catch (error) {
     console.error("Error fetching medications:", error);
@@ -187,7 +183,6 @@ async function populateCards(start_hour, start_date, frequency, duration) {
     subCardContainer.classList.add(`sub-container-card`);
     subCardContainer.id = `${medicine_name}`;
     fechasArray.forEach(function (item) {
-      console.log(fechasArray);
       var medicationCard = document.createElement("div");
       medicationCard.classList.add("medication-card");
       medicationCard.id = `card-${id}`;

@@ -15,7 +15,6 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace("/appointments");
-      console.log("login");
     } else {
       alert(response.statusText);
     }

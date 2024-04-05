@@ -92,7 +92,6 @@ async function fetchAppointments() {
       throw new Error("Failed to fetch appointments");
     }
     const appointments = await response.json();
-    console.log(appointments);
     return appointments;
   } catch (error) {
     console.error("Error fetching appointments:", error);
