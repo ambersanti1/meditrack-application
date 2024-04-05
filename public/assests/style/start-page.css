@@ -166,7 +166,7 @@ h5 {
 
 .market-numbers {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 30%;
 }
 
