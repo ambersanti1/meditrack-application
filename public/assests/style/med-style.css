@@ -197,7 +197,7 @@ button{
   display: flex;
   flex-direction: row;
   width: 70%;
-  margin-left: 100px;
+
 }
 
 /* FORM */
@@ -208,8 +208,10 @@ button{
   border-radius: 5px;
   box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 
 /* Title of the form */
@@ -300,8 +302,9 @@ input::placeholder {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: auto;
   padding: 20px;
+
 } 
 .sub-card-container{
   width: 100%;
@@ -611,6 +614,7 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: static;
 }
 
 /* Title of the form */
