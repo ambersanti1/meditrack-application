@@ -211,7 +211,7 @@ async function addCard(event) {
     geocoder.geocode({ address: location }, function (results, status) {
       if (status == "OK" && results.length > 0) {
 
-        newFormHandler(
+        await newFormHandler(
           doctor_name,
           speciality,
           addDate(dayValue),
@@ -219,7 +219,7 @@ async function addCard(event) {
           location
         );
 
-        populateCards(dayValue, location, mapCount);
+        await populateCards(dayValue, location, mapCount);
 
         var formulario = document.getElementById("formulario");
         formulario.reset();
