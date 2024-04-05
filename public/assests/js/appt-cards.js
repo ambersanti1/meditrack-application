@@ -208,7 +208,7 @@ async function addCard(event) {
 
     // Use Google Maps Geocoding API to validate the location
     var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ address: location }, function (results, status) {
+    geocoder.geocode({ address: location }, async function (results, status) {
       if (status == "OK" && results.length > 0) {
 
         await newFormHandler(
