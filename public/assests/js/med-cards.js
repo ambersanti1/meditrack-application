@@ -213,7 +213,7 @@ async function populateCards(start_hour, start_date, frequency, duration) {
 
 populateCards();
 
-function addTake(event) {
+async function addTake(event) {
   var medicineName = medicineNameEl.value;
   var disease = diseaseEl.value;
   var startHour = startHourEl.value;
@@ -232,7 +232,7 @@ function addTake(event) {
   } else {
     event.preventDefault();
 
-    newFormHandler(
+    await newFormHandler(
       medicineName,
       disease,
       startHour,
@@ -240,7 +240,8 @@ function addTake(event) {
       frequency,
       duration
     );
-    populateCards(startHour, startDate, frequency, duration);
+    
+    await populateCards(startHour, startDate, frequency, duration);
 
     var formulario = document.getElementById("formulario");
     formulario.reset();
