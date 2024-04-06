@@ -41,6 +41,13 @@
   font-size: 18px;
 }
 
+.sign-up-form .name-signup, 
+.sign-up-form .email-signup, 
+.sign-up-form .email-login {
+  text-transform: lowercase;
+}
+
+
 .sign-up-form input {
   width: 100%;
   padding: 8px;
@@ -124,7 +131,6 @@ a {
   text-decoration: none;
   margin-top: 10px;
   color: var(--darkcyan);
-  font-weight: 700;
 }
 @media(max-width: 770px) {
   .sign-up-form {
