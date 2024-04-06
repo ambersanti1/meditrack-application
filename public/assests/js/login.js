@@ -18,7 +18,7 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/appointments");
     } else {
-      alert("Add a secure password");
+      alert("Couldn't log in");
     }
   }
 };
