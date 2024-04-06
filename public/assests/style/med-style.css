@@ -535,6 +535,7 @@ input::placeholder {
   header h1 {
     font-size: 25px;
   }
+
   li, a {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 14px;
@@ -543,26 +544,28 @@ input::placeholder {
   list-style: none;
 }
 
-.nav_links li a:hover {
-  font-weight: bold;
-}
-
 }
 @media(max-width: 770px) {
   ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 10px;
 }
 .nav_links li {
   display: inline-block;
-  width: 120px;
+  width: 80px;
   text-align: center;
-  margin: 10px;
+  margin: 0;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.nav_links li a,
+.nav_links #logout{
+  font-size:13px;
 }
 
   .med-big-text {
@@ -579,8 +582,9 @@ input::placeholder {
   .med-big-text h4{
     font-size: 50px;
 }
-  .med-big-text h3 #current-date{
+  .med-big-text #current-date{
     font-size: 16px;
+    width: 200px;
 }
   .med-big-text h2{
     font-size: 20px;
@@ -606,7 +610,7 @@ input::placeholder {
 
 /* FORM */
   .container{
-  width: 380px;
+  width: 350px;
   background-color: #fff;
   padding: 1rem 0 1rem 0;
   border-radius: 5px;
@@ -615,6 +619,7 @@ input::placeholder {
   justify-content: center;
   align-items: center;
   position: static;
+  margin:0;
 }
 
 /* Title of the form */
