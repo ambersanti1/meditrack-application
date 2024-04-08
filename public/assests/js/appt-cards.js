@@ -112,6 +112,7 @@ async function deleteProjectById(projectId) {
       const errorMessage = await response.json();
       throw new Error(errorMessage.message);
     }
+    await populateCards();
     return true;
   } catch (error) {
     console.error("Error deleting project:", error);
@@ -141,14 +142,27 @@ const addDate = (dayValue) => {
   var date = nameMonth + " " + day + " " + year;
   return date;
 };
+const noMedDiv = document.createElement("div");
+const noMedText = document.createElement("p");
+noMedDiv.classList.add("noMedDiv");
+noMedText.textContent = "No appointments registered yet";
+const medFormCard = document.querySelector(".appointment-card");
 
 async function populateCards(dayValue, location, mapCount) {
+  let cardContainer = document.querySelector(".card-container");
   const appointments = await fetchAppointments();
+  if (appointments.length === 0) {
+    cardContainer.appendChild(noMedDiv);
+    noMedDiv.appendChild(noMedText);
+    return; // Exit the function early if there are no medications
+  }
+
+  // Clear existing cards if any
+  cardContainer.innerHTML = "";
   appointments.map((appointment) => {
     const { id, doctor_name, date, speciality, hour, location } = appointment;
     mapCount = id;
     const formatDate = addDate(date);
-    let cardContainer = document.querySelector(".card-container");
 
     if (document.getElementById(`card-${id}`)) {
       return; // Skip this iteration if the card already exists

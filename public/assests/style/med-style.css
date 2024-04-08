@@ -196,8 +196,21 @@ button{
 .med-form-card {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 70%;
+}
 
+.noMedDiv {
+  width: 100%;
+  height: 100vh;
+  font-size: 25px;
+  color: rgb(161, 160, 160);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: static;
 }
 
 /* FORM */
@@ -546,6 +559,14 @@ input::placeholder {
 
 }
 @media(max-width: 770px) {
+  .noMedDiv {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 15px;
+}
   ul {
   display: flex;
   justify-content: center;

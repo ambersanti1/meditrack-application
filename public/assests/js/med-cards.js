@@ -10,6 +10,7 @@ const addBtn = document.getElementById("add-btn");
 
 const today = dayjs();
 $("#current-date").text(today.format("dddd, MMMM D, YYYY"));
+let cardContainer = document.querySelector(".card-container");
 
 addBtn.addEventListener("click", function () {
   if (medicationForm.style.display === "block") {
@@ -17,7 +18,7 @@ addBtn.addEventListener("click", function () {
   } else {
     medicationForm.style.display = "block";
   }
-})
+});
 function calculateDate(startHour, startDate, frequency, duration) {
   var firstPartHour = startHour.split(":");
   var horaInicio = parseInt(firstPartHour[0]);
@@ -75,9 +76,9 @@ function displayCards(medicineName, id) {
 
       localStorage.setItem(`${medicineName}_currentCardIndex`, lastCardIndex);
 
-      if (lastCardIndex === cards.length -1) {
+      if (lastCardIndex === cards.length - 1) {
         await deleteProjectById(id);
-        cards[lastCardIndex].remove()
+        cards[lastCardIndex].remove();
         localStorage.removeItem(`${medicineName}_currentCardIndex`);
       }
       // Display the next card
@@ -153,15 +154,34 @@ async function deleteProjectById(medicationId) {
       const errorMessage = await response.json();
       throw new Error(errorMessage.message);
     }
+    await populateCards();
+
     return true;
   } catch (error) {
     console.error("Error deleting medication:", error);
     return false;
   }
 }
+    const noMedDiv = document.createElement("div");
+    const noMedText = document.createElement("p");
+    noMedDiv.classList.add("noMedDiv");
+    noMedText.textContent = "No medications registered yet";
+    const medFormCard = document.querySelector(".med-form-card");
 
 async function populateCards(start_hour, start_date, frequency, duration) {
+  let cardContainer = document.querySelector(".card-container");
   const medications = await fetchMedications();
+
+  // Check if there are no medications
+  if (medications.length === 0) {
+    cardContainer.appendChild(noMedDiv)
+    noMedDiv.appendChild(noMedText)
+    return; // Exit the function early if there are no medications
+  }
+
+  // Clear existing cards if any
+  cardContainer.innerHTML = "";
+
   medications.map((medication) => {
     const {
       id,
@@ -172,7 +192,6 @@ async function populateCards(start_hour, start_date, frequency, duration) {
       frequency,
       duration,
     } = medication;
-    let cardContainer = document.querySelector(".card-container");
 
     if (document.getElementById(`card-${id}`)) {
       return; // Skip this iteration if the card already exists
@@ -240,7 +259,7 @@ async function addTake(event) {
       frequency,
       duration
     );
-    
+
     await populateCards(startHour, startDate, frequency, duration);
 
     var formulario = document.getElementById("formulario");
@@ -248,3 +267,8 @@ async function addTake(event) {
   }
 }
 submitBtnMed.onclick = addTake;
+if (!cardContainer.querySelector(".medication-card")) {
+  console.log(
+    "Text to be printed if cardContainer does not have a medication card div."
+  );
+}
