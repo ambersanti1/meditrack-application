@@ -31,8 +31,8 @@
       <h1>meditrack</h1>
       <nav>
         <ul class="nav_links">
-          <li><a href="/medications">Medications</a></li>
-          <li><a id="logout">Logout</a></li>
+          <a href="/medications"><li>Medications</li></a>
+          <a id="logout"><li>Logout</li></a>
         </ul>
       </nav>
     </header>
@@ -56,7 +56,7 @@
 
       <!-- APPOINTMENT FORM -->
       <div class="med-form-card">
-        <div id="medication-form" class="hide">
+        <div id="medication-form" class=" hide">
           <div class="container">
             <form id="formulario" autocomplete="off">
               <div class="title">New appointment</div>
@@ -158,29 +158,50 @@
     <!-- GOOGLE MAPS -->
 
     <script>
-      // Alternatively, you can target your input element by ID
-      // Replace querySelector('input[name="search_input"]') with getElementById('search_input')
-      // and insert id="search_input" in your form's input field
-      var searchInput = document.querySelector('input[name="search_input"]');
-      document.addEventListener("DOMContentLoaded", function () {
-        const center = { lat: 20.689174, lng: -103.413131 };
-        // Create a bounding box with sides ~10km away from the center point
-        const defaultBounds = {
-          north: center.lat + 0.1,
-          south: center.lat - 0.1,
-          east: center.lng + 0.1,
-          west: center.lng - 0.1,
-        };
-        var autocomplete = new google.maps.places.Autocomplete(searchInput, {
-          bounds: defaultBounds,
-          fields: ["address_components", "geometry", "icon", "name"],
-          strictBounds: false,
-          types: ["hospital", "pharmacy", "bakery", "country"],
-        });
-        autocomplete.addListener("place_changed", function () {
-          var near_place = autocomplete.getPlace();
-        });
-      });
+var searchInput = document.querySelector('input[name="search_input"]');
+document.addEventListener("DOMContentLoaded", async function () {
+  const center = { lat: 20.689174, lng: -103.413131 };
+  // Create a bounding box with sides ~10km away from the center point
+  const defaultBounds = {
+    north: center.lat + 0.1,
+    south: center.lat - 0.1,
+    east: center.lng + 0.1,
+    west: center.lng - 0.1,
+  };
+  var autocomplete = new google.maps.places.Autocomplete(searchInput, {
+    bounds: defaultBounds,
+    fields: ["address_components", "geometry", "icon", "name"],
+    strictBounds: false,
+    types: ["hospital", "pharmacy", "bakery", "country"],
+  });
+
+  searchInput.addEventListener("change", async function () {
+    const place = await getPlaceDetails(autocomplete.getPlace());
+    console.log(place);
+  });
+});
+
+async function getPlaceDetails(place) {
+  return new Promise((resolve, reject) => {
+    if (!place || !place.place_id) {
+      reject("Invalid place");
+    }
+    const service = new google.maps.places.PlacesService(document.createElement("div"));
+    service.getDetails(
+      {
+        placeId: place.place_id,
+        fields: ["name", "formatted_address", "geometry"],
+      },
+      (result, status) => {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          resolve(result);
+        } else {
+          reject(`Place details request failed: ${status}`);
+        }
+      }
+    );
+  });
+}
     </script>
   </body>
 </html>

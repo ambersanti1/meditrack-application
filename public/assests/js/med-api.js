@@ -1,14 +1,25 @@
-fetch(
-  "https://health-products.canada.ca/api/drug/drugproduct/?lang=en&type=json"
-)
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", async function () {
+  try {
+    const data = await fetchData(
+      "https://health-products.canada.ca/api/drug/drugproduct/?lang=en&type=json"
+    );
     const result = data.map(({ brand_name }) => brand_name);
     autocomplete(document.getElementById("myInput"), result);
-  });
-
+  } catch (error) {
+    console.error("Error initializing autocomplete:", error);
+  }
+});
 function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
   the text field element and an array of possible autocompleted values:*/

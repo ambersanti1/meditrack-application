@@ -1,28 +1,25 @@
 const router = require("express").Router();
-const { Medication } = require("../../models");
+const { Med } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-// CREATE MEDICATION CARDS /API/PROJECTS
-router.post("/", withAuth, async (req, res) => {
+// CREATE MED CARDS /API/PROJECTS
+router.post("/", async (req, res) => {
   try {
-    const newMedication = await Medication.create({
+    const newMed = await Med.create({
       ...req.body,
       user_id: req.session.user_id,
     });
-    res.status(200).json(newMedication);
+    res.status(200).json(newMed);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-
 // GET PROJECTS
 router.get("/", async (req, res) => {
   try {
-    const medications = await Medication.findAll({
-      where: { user_id: req.session.user_id },
-    });
-    res.json(medications);
+    const Meds = await Med.findAll();
+    res.json(Meds);
   } catch (err) {
     console.error({ message: err });
     res.status(500).json(err);
@@ -32,19 +29,19 @@ router.get("/", async (req, res) => {
 // DELETE PROJECTS
 router.delete("/:id", async (req, res) => {
   try {
-    const medicationData = await Medication.destroy({
+    const MedData = await Med.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!medicationData) {
+    if (!MedData) {
       res.status(404).json({ message: "No project found with this id!" });
       return;
     }
 
-    res.status(200).json(medicationData);
+    res.status(200).json(MedData);
   } catch (err) {
     res.status(500).json(err);
   }
