@@ -49,11 +49,3 @@ Med.init(
 );
 
 module.exports = Med;
-
-/* PSEUDOCODIGO
-Create model to save data (medicine_name, disease, dia, hora and progress)
-Save data in fechas array in the database
-Create route to post cards
-fetch cards to be displayed 
-
-*/

@@ -18,14 +18,17 @@ router.post("/", async (req, res) => {
 // GET PROJECTS
 router.get("/", async (req, res) => {
   try {
-    const Meds = await Med.findAll();
+    const Meds = await Med.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
     res.json(Meds);
   } catch (err) {
     console.error({ message: err });
     res.status(500).json(err);
   }
 });
-
 // DELETE PROJECTS
 router.delete("/:id", async (req, res) => {
   try {
