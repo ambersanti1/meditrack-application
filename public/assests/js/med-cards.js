@@ -135,7 +135,7 @@ async function addCard() {
 
       if (medicineNameExists) {
         alert(
-          "A medication card with the same medicine name already exists. Please choose another name."
+          "You already have a treatment with that medicine"
         );
         return;
       }
