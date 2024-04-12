@@ -35,7 +35,7 @@ header {
 }
 
 li #logout, 
-li a {
+a li {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 16px;
   padding: 0;
@@ -45,9 +45,11 @@ li a {
   cursor: pointer;
   width: 200px;
   text-align: center;
-
+  text-decoration: none;
 }
-
+a {
+  text-decoration: none;
+}
 .nav_links li {
   display: inline-block;
   width: 120px;
@@ -90,28 +92,24 @@ h3 {
 .medication-title-section {
   width: 100%;
   display: flex;
-  flex-direction:row;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   height: auto;
 }
 
 .med-big-text {
-  width: 30%;
-  height: 500px;
-  padding: 0 0 0 80px;
+  padding: 0 0 0 70px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
 .container-text {
-  width: 30%;
-
+  width: 20%;
 }
 .med-big-text {
   position: fixed;
-  padding: 0 0 0 80px;
   top: 200px;
   left: 0;
 }
@@ -196,26 +194,27 @@ button{
 .med-form-card {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 85%;
+  height: auto;
 }
 
 .noMedDiv {
   width: 100%;
-  height: 100vh;
+  height: 500px;
   font-size: 25px;
   color: rgb(161, 160, 160);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  position: static;
 }
 
 /* FORM */
+
 .container{
-  width: 400px;
+  width:400px;
   background-color: #fff;
   padding: 1rem 0 1rem 0;
   border-radius: 5px;
@@ -224,7 +223,7 @@ button{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 /* Title of the form */
@@ -316,7 +315,7 @@ input::placeholder {
   justify-content: center;
   align-items: center;
   width: auto;
-  padding: 20px;
+
 
 } 
 .sub-card-container{
@@ -335,25 +334,14 @@ input::placeholder {
   top: 50%;
   left: 50%;
   transform: translate (-50%,-50%);
-}
-.congratulation-card{
-  width: 550px;
-  margin-bottom: 1rem;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
-  display: flex;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate (-50%,-50%);
+  margin: 20px;
 }
 
 .time-section{
   background: var(--darkcyan);
   color: #fff;
   padding: 30px;
-  width: 40%;
+  width: 30%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -388,7 +376,7 @@ input::placeholder {
 .info-section{
   padding: 10px;
   position: relative;
-  width: 60%;
+  width: 70%;
 }
 
 .info-section .medicine-name{
@@ -575,7 +563,7 @@ input::placeholder {
 }
 .nav_links li {
   display: inline-block;
-  width: 80px;
+  width: 100px;
   text-align: center;
   margin: 0;
   height: 80px;
@@ -584,15 +572,15 @@ input::placeholder {
   align-items: center;
 }
 
-.nav_links li a,
+.nav_links a li,
 .nav_links #logout{
   font-size:13px;
 }
 
   .med-big-text {
-  width: 30%;
+  width: 15%;
   height: 500px;
-  padding: 0 0 0 80px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -639,10 +627,13 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: static;
   margin:0;
 }
-
+.medication-form {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Title of the form */
 .container .title{
   font-size: 20px; 
@@ -774,7 +765,8 @@ button{
 
 }
 
-@media(max-width: 1200px) {
+@media(max-width: 1350px) {
+
   .medication-card {
     margin: 20px 20px 20px 20px;
   }
@@ -792,6 +784,7 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position:static;
   }
   .med-form-card {
     display: flex;
@@ -801,7 +794,13 @@ button{
     width: 100%;
     margin: 0;
   }
-
+  .autocomplete-items div {
+    font-size: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+  }
 }
 
 /* AUTOCOMPLETE SECTION */
@@ -824,6 +823,7 @@ button{
 }
 
 .autocomplete-items div {
+  width: 300px;
   font-size: 13px;
   padding: 10px;
   cursor: pointer;

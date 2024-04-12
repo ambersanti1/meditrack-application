@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const userRoutes = require("./userRoutes");
 const projectRoutes = require('./projectRoutes')
-const medicationRoutes = require('./medicationRoutes')
+const medRoutes = require('./medRoutes')
 
 router.use("/users", userRoutes);
 router.use('/projects', projectRoutes)
-router.use('/medications', medicationRoutes)
+router.use('/meds', medRoutes)
 
 module.exports = router;

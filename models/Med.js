@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Medication extends Model {}
+class Med extends Model {}
 
-Medication.init(
+Med.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -19,19 +19,15 @@ Medication.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    start_hour: {
+    dia: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    start_date: {
+    hora: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    frequency: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    duration: {
+    progress: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -48,8 +44,16 @@ Medication.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "medication",
+    modelName: "med",
   }
 );
 
-module.exports = Medication;
+module.exports = Med;
+
+/* PSEUDOCODIGO
+Create model to save data (medicine_name, disease, dia, hora and progress)
+Save data in fechas array in the database
+Create route to post cards
+fetch cards to be displayed 
+
+*/

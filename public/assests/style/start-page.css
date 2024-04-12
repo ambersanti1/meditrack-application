@@ -11,7 +11,8 @@ body {
     max-width: 100%;
     background-size: cover;
     background-repeat:no-repeat;
-    height: 850px;
+    height: 130vh;
+    background-position: center;
 }
 
 /* HEADER */
@@ -83,7 +84,7 @@ header li, a {
   color: var(--darkblue);
   width: 80%;
   margin: 80px auto 20px auto;
-  height: 700px;
+  height: 100vh;
   line-height: 7rem;
 
 }
