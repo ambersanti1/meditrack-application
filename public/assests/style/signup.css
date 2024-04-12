@@ -13,7 +13,9 @@
   --darkgreen: #008b46;
   --darkgray: rgb(58, 54, 54);
 }
-
+body {
+    background-color: whitesmoke;
+}
 .sign-up-container {
   display: flex;
   justify-content: center;

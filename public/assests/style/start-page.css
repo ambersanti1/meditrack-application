@@ -56,6 +56,7 @@ header li, a {
   text-decoration: none;
   text-align: center;
   list-style: none;
+
 }
 
 .nav_links li {
@@ -63,16 +64,19 @@ header li, a {
 }
 
 .nav_links li a {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   transition: all 0.3s ease 0s;
   color: darkcyan;
-  padding: 0.5rem;
-  border-radius: 10%;
   width: 100px;
+    height: 70px;
 }
 
 .nav_links li a:hover {
   font-weight: bold;
+  background-color: whitesmoke;
 }
 
 /* CONTAINER */
@@ -267,6 +271,7 @@ header a {
 
 .nav_links li a {
   width: 80px;
+  height: 60px;
 }
 
 .phrase-container{

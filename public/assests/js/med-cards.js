@@ -90,7 +90,7 @@ function calculateDate(startHour, startDate, frequency, duration) {
 
   // Push the initial object with start date and start hour
   fechasArray.push({
-    dia: `${fecha.getDate()}-${fecha.getMonth() + 1}-${fecha.getFullYear()}`,
+    dia: `${fecha.getDate() +1}-${fecha.getMonth() + 1}-${fecha.getFullYear()}`,
     hora: `${fecha.getHours() < 10 ? "0" : ""}${fecha.getHours()}:00`,
     progress: `${suma}`,
   });
@@ -119,34 +119,52 @@ async function addCard() {
   var startDate = startDateEl.value;
   var frequency = frequencyEl.value;
   var duration = durationEl.value;
+  if (
+    medicineName &&
+    disease &&
+    startHour &&
+    startDate &&
+    frequency &&
+    duration
+  ) {
 
-  if(medicineName && disease && startHour && startDate && frequency && duration) {
-    var cardContainer = document.querySelector(".card-container");
-
-    event.preventDefault();
-
-    calculateDate(startHour, startDate, frequency, duration);
-
-    var medicineCardMap = new Map();
-
-    // Map each async operation to a promise
-    var postRequests = fechasArray.map(async function (item) {
-      return postMedication(
-        medicineName,
-        disease,
-        item.dia,
-        item.hora,
-        item.progress
+      var existingCards = document.querySelectorAll(".medicine-name");
+      var medicineNameExists = Array.from(existingCards).some(
+        (card) => card.textContent === medicineName
       );
-    });
 
-    // Wait for all async operations to complete
-    await Promise.all(postRequests);
+      if (medicineNameExists) {
+        alert(
+          "A medication card with the same medicine name already exists. Please choose another name."
+        );
+        return;
+      }
 
-    // Reload the page after all data is posted
-    location.reload();
+      var cardContainer = document.querySelector(".card-container");
+
+      calculateDate(startHour, startDate, frequency, duration);
+
+      var medicineCardMap = new Map();
+
+      // Map each async operation to a promise
+      var postRequests = fechasArray.map(async function (item) {
+        return postMedication(
+          medicineName,
+          disease,
+          item.dia,
+          item.hora,
+          item.progress
+        );
+      });
+
+      // Wait for all async operations to complete
+      await Promise.all(postRequests);
+
+      // Reload the page after all data is posted
+      location.reload();
+    
   } else {
-    alert("Fill all the boxes")
+    alert("Fill all the boxes");
   }
 }
 
