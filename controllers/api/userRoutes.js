@@ -17,6 +17,16 @@ router.post("/", async (req, res) => {
     res.status(400).json(err);
   }
 });
+router.get("/", async (req, res) => {
+  try {
+    const emails = await User.findAll({
+    });
+    res.json(emails);
+  } catch (err) {
+    console.error({ message: err });
+    res.status(500).json(err);
+  }
+});
 
 // LOGIN
 router.post("/login", async (req, res) => {
